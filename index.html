@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marcus Gallery</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head> 
+    <body>
+      <style>
+        body{background-image: url('https://w.wallhaven.cc/full/g7/wallhaven-g7jg63.png');}
+        #dingdong{
+  background-color: opacity!important;
+  opacity: 0.5;
+}
+      </style>
+      <div class="container">
+        <header>
+            <nav>
+    <div class="nav-wrapper blue-grey darken-3">
+      <a href="#!" class="brand-logo center">Marcus</a>
+      <ul class="left hide-on-med-and-down">
+        <li><a href="Profile.html">Profile</a></li>
+        <li>
+          <div class="input-field">
+          <a href="Gallery.html">
+            <i class="material-icons">brush</i><a href="Gallery.html">Gallery</a>
+            
+        </a>
+      </div>
+      </li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="dingdong">
+    <div class="nav-wrapper blue-grey darken-3">
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="carousel carousel-slider">
+    <a class="carousel-item" href="#one!"><img src="https://w.wallhaven.cc/full/g7/wallhaven-g7jg63.png"></a>
+    <a class="carousel-item" href="#two!"><img src="https://w.wallhaven.cc/full/g7/wallhaven-g7jg63.png"></a>
+    <a class="carousel-item" href="#three!"><img src="https://w.wallhaven.cc/full/g7/wallhaven-g7jg63.png"></a>
+    <a class="carousel-item" href="#four!"><img src="https://w.wallhaven.cc/full/g7/wallhaven-g7jg63.png"></a>
+  </div>
+
+</main>
+<footer>
+
+</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  // initialize carousel
+  const carousel = document.querySelectorAll('.carousel');
+  M.Carousel.init(carousel, {
+    fullWidth: true,
+    indicators: true, // this option is require for autoplay functionnality
+  });
+
+  // custom function for autoplaying 
+  let indicatorItems = document.querySelectorAll('.carousel .indicator-item'),
+      slideTime = 3000,
+      activeClass = "active";
+
+  setInterval(() => {
+    indicatorItems.forEach(el => {
+      if (el.classList.contains(activeClass)) {
+        sib = el.nextElementSibling;
+        if (sib == null) {
+          indicatorItems[0].click();
+        } else {
+          sib.click()
+        }
+      }
+    });
+  }, slideTime);
+});
+</script>
+
+    </body>
+</html>
